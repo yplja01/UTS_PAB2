@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_info_gemps_bmkg/models/services/api_service.dart';
 import 'package:flutter_info_gemps_bmkg/models/gempa_model.dart';
 void main() {
-  runApp(MaterialApp(
-    home: GempaScreen(),
-  ));
+  runApp(MaterialApp(home: GempaScreen()));
 }
 
 class GempaScreen extends StatefulWidget {
@@ -16,9 +14,9 @@ class _GempaScreenState extends State<GempaScreen> {
   late Future<Gempa> futureGempa;
 
   @override
+  void initState() {
     super.initState();
     futureGempa = ApiService.fetchGempa();
-    
   }
 
   @override
@@ -35,11 +33,11 @@ class _GempaScreenState extends State<GempaScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Tanggal: ${gempa.tanggal}"),
-                  Text("Jam: ${gempa.jam}"),
-                  Text("Lokasi: ${gempa.lokasi}"),
-                  Text("Magnitudo: ${gempa.magnitudo}"),
-                  Text("Kedalaman: ${gempa.kedalaman}"),
+                  Text("Tanggal: ${gempa.Tanggal}"),
+                  Text("Jam: ${gempa.Jam}"),
+                  Text("Lokasi: ${gempa.Lokasi}"),
+                  Text("Magnitudo: ${gempa.Magnitudo}"),
+                  Text("Kedalaman: ${gempa.Kedalaman}"),
                   Text("Wilayah: ${gempa.wilayah}"),
                   Text("Dirasakan: ${gempa.dirasakan}"),
                 ],
